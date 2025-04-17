@@ -1,0 +1,193 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: "SF Pro Display","SF Pro Icons","Apple Gothic","HY Gulim","MalgunGothic","HY Dotum","Lexi Gulim","Helvetica Neue","Helvetica","Arial",sans-serif;
+}
+
+body {
+    width: 100%;
+    height: 100%;
+}
+
+a {
+    text-decoration: none;
+}
+
+header{
+    width: 100%;
+    height: 44px;
+    background-color: rgba(22, 22, 23, 0.8);
+    position: fixed;
+    z-index: 2;
+}
+
+nav{
+    max-width: 1024px;
+    height: 44px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav > a {
+    padding: 6px 50px;
+    position: relative;
+    color: white;
+}
+
+nav > a::after{
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 2px;
+    background: white;
+    transition: all .3s ease-out;
+}
+
+nav > a:hover::after{
+    width: 50%;
+}
+
+nav > a:first-child:hover::after{
+    width: 0%;
+}
+
+nav > a:first-child > img {
+    width: 35px;
+    height: 35px;
+}
+
+.dummy {
+    width: 100%;
+    height: 44px;
+    background-color: lightgray;
+}
+
+.bannerBig {
+    width: 100%;
+    height: 692px;
+    background-color: rgb(249, 249, 251);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 12px;
+}
+
+.bannerBig > .gameWrap {
+    aspect-ratio: 16/9;
+    width: 100%;
+    max-width: 940px;
+}
+
+.bannerBig > .gameWrapH {
+    aspect-ratio: 9/16;
+    max-width: 370px;
+}
+
+iframe{
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.bannerBig:nth-child(2), .gContainer > .bannerBig:first-child, .black {
+    background-color: #000;
+    color: white;
+}
+
+.bannerBig > .textWrap {
+    text-align: center;
+    padding-top: 55px;
+}
+
+.textWrap > h2 {
+    display: block;
+    font-size: 56px;
+    line-height: 1.07143;
+    font-weight: 600;
+    letter-spacing: -.005em;
+}
+
+.textWrap > span {
+    font-size: 28px;
+    padding: 15px;
+}
+
+.textWrap > h3 {
+    font-size: 24px;
+    font-weight: 400;
+    letter-spacing: .004em;
+    margin-top: 6px;
+}
+
+.textWrap > .links {
+    font-size: 20px;
+    letter-spacing: .011em;
+    margin-top: 0.65em;
+    height: 32px;
+}
+
+.links > a {
+    color: rgb(41, 151, 255);
+}
+
+.innerImg{
+    width: 1024px;
+    height: 100%;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.gContainer {
+    margin: 0 12px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(auto-fill, minmax(50%, auto));
+    column-gap: 12px;
+}
+
+.gContainer > .bannerBig {
+    height: 580px;
+}
+
+.gContainer > .bannerBig > .textWrap > h2 {
+    font-size: 40px;
+    line-height: 1.1;
+    font-weight: 600;
+    letter-spacing: 0em;
+}
+
+.gContainer > .bannerBig > .textWrap > h3 {
+    font-size: 21px;
+    line-height: 1.2381;
+    font-weight: 400;
+    letter-spacing: .016em;
+    margin-top: 4px;
+}
+
+.gContainer > .bannerBig > .textWrap > .links {
+    font-size: 17px;
+    letter-spacing: .022em;
+    margin-top: 0.65em;
+    height: 32px;
+}
+
+footer {
+    border-top:1px solid #d2d2d7;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    padding: 40px 25%;
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: -.01em;
+    line-height: 1.33337;
+    min-width: 1024px;
+    background-color: #f5f5f7;
+}
