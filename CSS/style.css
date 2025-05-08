@@ -23,7 +23,7 @@ header{
 }
 
 nav{
-    max-width: 1024px;
+    max-width: 1280px;
     height: 44px;
     margin: 0 auto;
     display: flex;
@@ -35,6 +35,14 @@ nav > a {
     padding: 6px 50px;
     position: relative;
     color: white;
+}
+
+nav > a:first-child {
+    height: 100%;
+    background-image: url("../img/testlogo.PNG");
+    background-size: 40px 40px;;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 nav > a::after{
@@ -53,23 +61,17 @@ nav > a:hover::after{
     width: 50%;
 }
 
-nav > a:first-child:hover::after{
-    width: 0%;
-}
-
-nav > a:first-child > img {
-    width: 35px;
-    height: 35px;
-}
-
 .dummy {
     width: 100%;
     height: 44px;
     background-color: lightgray;
 }
 
+section {
+    display: flex;
+}
+
 .bannerBig {
-    width: 100%;
     height: 692px;
     background-color: rgb(249, 249, 251);
     display: flex;
@@ -78,26 +80,14 @@ nav > a:first-child > img {
     margin-bottom: 12px;
 }
 
-.bannerBig > .gameWrap {
-    aspect-ratio: 16/9;
-    width: 100%;
-    max-width: 940px;
-}
-
-.bannerBig > .gameWrapH {
-    aspect-ratio: 9/16;
-    max-width: 370px;
+aside {
+    width: 300px;
 }
 
 iframe{
     display: block;
     width: 100%;
     height: 100%;
-}
-
-.bannerBig:nth-child(2), .gContainer > .bannerBig:first-child, .black {
-    background-color: #000;
-    color: white;
 }
 
 .bannerBig > .textWrap {
@@ -142,40 +132,6 @@ iframe{
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
-}
-
-.gContainer {
-    margin: 0 12px;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(auto-fill, minmax(50%, auto));
-    column-gap: 12px;
-}
-
-.gContainer > .bannerBig {
-    height: 580px;
-}
-
-.gContainer > .bannerBig > .textWrap > h2 {
-    font-size: 40px;
-    line-height: 1.1;
-    font-weight: 600;
-    letter-spacing: 0em;
-}
-
-.gContainer > .bannerBig > .textWrap > h3 {
-    font-size: 21px;
-    line-height: 1.2381;
-    font-weight: 400;
-    letter-spacing: .016em;
-    margin-top: 4px;
-}
-
-.gContainer > .bannerBig > .textWrap > .links {
-    font-size: 17px;
-    letter-spacing: .022em;
-    margin-top: 0.65em;
-    height: 32px;
 }
 
 footer {
