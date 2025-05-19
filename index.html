@@ -5,11 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./CSS/style.css">
     <title>경기대 팀플</title>
+    <script src="./js/script.js"></script>
 </head>
 <body>
     <header>
         <nav>
-            <a href="#"></a>
             <a href="#">구 단</a>
             <a href="#">순 위</a>
             <a href="#">일 정</a>
@@ -22,22 +22,89 @@
 
     <div class="dummy"></div>
     <section>
-        <aside>
-
-        </aside>
-        <div class="bannerBig">
-            <div class="textWrap">
-                <img src="./img/testlogo.PNG" alt="">
+        <aside class="left" id="leftTeamPanel">
+            <div>
+                <div class="logoM" id="leftTeamLogo" style="background-image: url(./img/emblemSE.png);"></div>
+                <h1 id="leftTeamName">FC 서울</h1>
+                <span class="closePanel">X</span>
             </div>
-            <div class="innerImg" style="background-image: url(./img/test1.PNG);"></div>
+            <h2>응원가</h2>
+            <iframe id="leftTeamVideo" width="426" height="240" src="https://www.youtube.com/embed/CCn6PkPfkTg?si=mxVWEnwP9zW1pUPh" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            <h2>현재 순위</h2>
+            <div class="rank">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>순위</th>
+                            <th colspan="2">구단</th>
+                            <th>경기수</th>
+                            <th>승</th>
+                            <th>무</th>
+                            <th>패</th>
+                            <th>승점</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                    </tbody>
+                </table>
+            </div>
+            <a href="#"><h2>선수단</h2></a>
+        </aside>
+
+        <div class="bannerBig">
+            <div class="logo" style="background-image: url(./img/emblem.png);"></div>
+            <div class="container">
+                <div class="wrap">
+                    <div class="logo team-logo" data-team="SE" data-panel="left" style="background-image: url(./img/emblemSE.png);"></div>
+                    <div class="logo team-logo" data-team="AY" data-panel="left" style="background-image: url(./img/emblemAY.png);"></div>
+                    <div class="logo team-logo" data-team="SW" data-panel="left" style="background-image: url(./img/emblemSW.png);"></div>
+                    <div class="logo team-logo" data-team="DJ" data-panel="left" style="background-image: url(./img/emblemDJ.png);"></div>
+                    <div class="logo team-logo" data-team="JB" data-panel="left" style="background-image: url(./img/emblemJB.png);"></div>
+                    <div class="logo team-logo" data-team="GJ" data-panel="left" style="background-image: url(./img/emblemGJ.png);"></div>
+                </div>
+                <div class="innerImg" style="background-image: url(./img/BG.png);"></div>
+                <div class="wrap">
+                    <div class="logo team-logo" data-team="GW" data-panel="right" style="background-image: url(./img/emblemGW.png);"></div>
+                    <div class="logo team-logo" data-team="GC" data-panel="right" style="background-image: url(./img/emblemGC.png);"></div>
+                    <div class="logo team-logo" data-team="PH" data-panel="right" style="background-image: url(./img/emblemPH.png);"></div>
+                    <div class="logo team-logo" data-team="DG" data-panel="right" style="background-image: url(./img/emblemDG.png);"></div>
+                    <div class="logo team-logo" data-team="US" data-panel="right" style="background-image: url(./img/emblemUS.png);"></div>
+                    <div class="logo team-logo" data-team="JJ" data-panel="right" style="background-image: url(./img/emblemJJ.png);"></div>
+                </div>
+            </div>
         </div>
-        <aside>
-            
+        <aside class="right" id="rightTeamPanel">
+            <div>
+                <div class="logoM" id="rightTeamLogo" style="background-image: url(./img/emblemUS.png);"></div>
+                <h1 id="rightTeamName">울산 현대</h1>
+                <span class="closePanel">X</span>
+            </div>
+            <h2>응원가</h2>
+            <iframe id="rightTeamVideo" width="426" height="240" src="https://www.youtube.com/embed/VIDEO_ID" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            <h2>현재 순위</h2>
+            <div class="rank">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>순위</th>
+                            <th colspan="2">구단</th>
+                            <th>경기수</th>
+                            <th>승</th>
+                            <th>무</th>
+                            <th>패</th>
+                            <th>승점</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                    </tbody>
+                </table>
+            </div>
+            <a href="#"><h2>선수단</h2></a>
         </aside>
     </section>
     <footer>
-        <div class = "logo"></div>
-
         <p>경기대학교 웹프로그래밍(DD725_1454) 팀프로젝트</p>
         <p>@Copyright 2023 MinCheol Shin. All rights reserved.</p>
         <br>

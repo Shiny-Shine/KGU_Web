@@ -12,6 +12,7 @@ body {
 
 a {
     text-decoration: none;
+    color: inherit;
 }
 
 header{
@@ -64,16 +65,18 @@ nav > a:hover::after{
 .dummy {
     width: 100%;
     height: 44px;
+    margin-bottom: 1em;
     background-color: lightgray;
 }
 
 section {
     display: flex;
     justify-content: center;
+    min-height: 60vh;
 }
 
 .bannerBig {
-    height: 692px;
+    width: 768px;
     background-color: rgb(249, 249, 251);
     display: flex;
     flex-direction: column;
@@ -81,46 +84,113 @@ section {
     margin-bottom: 12px;
 }
 
-aside {
-    width: 300px;
-}
-
-iframe{
-    display: block;
+.container{
+    display: flex;
+    justify-content: center;
     width: 100%;
     height: 100%;
 }
 
-.bannerBig > .textWrap {
+/* aside 패널 공통 스타일 */
+aside.left, aside.right {
+    width: 450px;
+    height: 775px;
+    padding: 1em;
+    padding-right: 1.5em;
+    margin: 0 10px;
+    background-color: lightgray;
+    border-radius: 2.5em;
     text-align: center;
-    padding-top: 55px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    max-height: 80vh;
+    
+    /* 초기 상태에서는 패널 숨김 */
+    display: none;
+    position: fixed;
+    box-shadow: 0 0 15px rgba(0,0,0,0.3);
 }
 
-.textWrap > h2 {
-    display: block;
-    font-size: 56px;
-    line-height: 1.07143;
-    font-weight: 600;
-    letter-spacing: -.005em;
+aside.left {
+    left: 30vh;
 }
 
-.textWrap > span {
-    font-size: 28px;
-    padding: 15px;
+aside.right {
+    right: 30vh;
 }
 
-.textWrap > h3 {
-    font-size: 24px;
-    font-weight: 400;
-    letter-spacing: .004em;
-    margin-top: 6px;
+aside > div {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
 }
 
-.textWrap > .links {
-    font-size: 20px;
-    letter-spacing: .011em;
-    margin-top: 0.65em;
-    height: 32px;
+aside > h2, a {
+    line-height: 1.5;
+    margin: 20px 0;
+    text-align: left;
+}
+
+/* 현재 선택된 팀 하이라이트 */
+.current-team td {
+    background-color: #e8f0fe !important;
+    font-weight: bold;
+}
+
+/* 스크롤바 스타일링 */
+aside::-webkit-scrollbar {
+    width: 8px;
+}
+
+aside::-webkit-scrollbar-track {
+    background: rgba(0,0,0,0.05);
+    border-radius: 10px;
+}
+
+aside::-webkit-scrollbar-thumb {
+    background: rgba(0,0,0,0.2);
+    border-radius: 10px;
+}
+
+/* X 버튼 스타일 */
+.closePanel {
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 1.2em;
+    padding: 5px 10px;
+    transition: color 0.3s;
+}
+
+.closePanel:hover {
+    color: red;
+}
+
+table {
+    font-size: 1em;
+    width: 100%;
+    box-shadow: 0 2px 5px rgba(0,0,0,.25);
+    border-collapse: collapse;
+    border-radius: 5px;
+    margin-bottom: 1em;
+}
+  
+thead {
+    font-weight: bold;
+    color: #fff;
+    background: grey;
+}
+  
+td, th {
+    padding: .5em;
+}
+  
+td {
+    border-bottom: 1px solid rgba(0,0,0,.1);
+    background: #fff;
+}
+
+tr:nth-child(odd) td {
+    background:#EBEBEB;
 }
 
 .links > a {
@@ -128,11 +198,35 @@ iframe{
 }
 
 .innerImg{
-    width: 1024px;
+    width: 75%;
     height: 100%;
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
+}
+
+.logo {
+    width: 100px;
+    height: 100px;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.logoM {
+    width: 75px;
+    height: 75px;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.logoS {
+    width: 50px;
+    height: 50px;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 footer {
