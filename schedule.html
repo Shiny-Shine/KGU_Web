@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./CSS/schedule.css">
+    <title>경기대 팀플</title>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.14.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="/resources/demos/style.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <script src="https://code.jquery.com/ui/1.14.1/jquery-ui.js"></script>
+    <script>
+        $( function() {
+        $( "#datepicker" ).datepicker();
+        $.datepicker.setDefaults({
+            dateFormat: 'yy-mm-dd',
+            prevText: '이전 달',
+            nextText: '다음 달',
+            monthNames: ['1월', '2월', '3월', '4월', '5월', '6월', '7월', '8월', '9월', '10월', '11월', '12월'],
+            dayNamesMin: ['일', '월', '화', '수', '목', '금', '토'],
+            showMonthAfterYear: true,
+            yearSuffix: '년'
+            });
+
+        } );
+    </script>
+    <script src="./js/schedule.js"></script>
+</head>
+<body>
+    <header>
+        <nav>
+            <h1>Gudan</h1>
+            <a href="./index.html">구 단</a>
+            <a href="#">순 위</a>
+            <a href="./schedule.html">일 정</a>
+            <div class="login">
+                <a href="#">로그인</a>
+                <a href="#">회원가입</a>
+            </div>
+        </nav>
+    </header>
+
+    <section>
+        <div class="schedule-head">
+            <h2>2025 K리그1 경기 일정</h2>
+            <p>날짜 선택: <input type="text" id="datepicker"></p>
+        </div>
+        <table class="schedule-table">
+            <thead>
+                <tr>
+                    <th>날짜</th>
+                    <th>시간</th>
+                    <th>홈팀</th>
+                    <th></th>
+                    <th>원정팀</th>
+                    <th>경기장</th>
+                </tr>
+            </thead>
+            <tbody id="scheduleBody">
+            </tbody>
+        </table>
+    </section>
+    <footer>
+        <p>경기대학교 웹프로그래밍(DD725_1454) 팀프로젝트</p>
+        <p>@Copyright 2023 MinCheol Shin. All rights reserved.</p>
+        <br>
+        <p>경기대학교 AI컴퓨터공학부 컴퓨터공학전공 임유진</p>
+        <p>경기대학교 AI컴퓨터공학부 인공지능전공 신민철</p>
+        <p>경기대학교 AI컴퓨터공학부 인공지능전공 류동헌</p>
+    </footer>
+</body>
+</html>
