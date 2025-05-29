@@ -214,7 +214,7 @@ document.addEventListener('DOMContentLoaded', function() {
             updateTeamInfo(teamName, panelSide);
             
             // 패널 표시
-            targetPanel.style.display = 'block';
+            targetPanel.style.visibility = 'visible';
         });
     });
     
@@ -223,7 +223,7 @@ document.addEventListener('DOMContentLoaded', function() {
         button.addEventListener('click', function() {
             const parentPanel = this.closest('aside');
             if (parentPanel) {
-                parentPanel.style.display = 'none';
+                parentPanel.style.visibility = 'hidden';
             }
         });
     });
@@ -295,4 +295,16 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         }
     }
+
+    const players = document.getElementById('players');
+    const btnLeft = document.querySelector('.scroll-left-btn');
+    const btnRight = document.querySelector('.scroll-right-btn');
+
+    btnLeft.addEventListener('click', () => {
+        players.scrollBy({ left: -318, behavior: 'smooth' });
+    });
+
+    btnRight.addEventListener('click', () => {
+        players.scrollBy({ left: 318, behavior: 'smooth' });
+    });
 });

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./CSS/stylePlayers.css">
+    <link rel="stylesheet" href="./CSS/styleBasic.css">
+    <title>GUDAN</title>
+    <script src="./js/scriptPlayers.js"></script>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <h1>Gudan</h1>
+            <a href="./index.html">구 단</a>
+            <a href="#">순 위</a>
+            <a href="./schedule.html">일 정</a>
+            <div class="login">
+                <a href="#">로그인</a>
+                <a href="#">회원가입</a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section id="selectGudan" class="selectGudan">
+            <button data-teamid="1" onclick="selectTeam(1)">FC서울</button>
+            <button data-teamid="2" onclick="selectTeam(2)">전북FC</button>
+            <button data-teamid="3" onclick="selectTeam(3)">대전FC</button>
+            <button data-teamid="4" onclick="selectTeam(4)">안양FC</button>
+            <button data-teamid="5" onclick="selectTeam(5)">수원FC</button>
+            <button data-teamid="6" onclick="selectTeam(6)">광주FC</button>
+            <button data-teamid="7" onclick="selectTeam(7)">강원FC</button>
+            <button data-teamid="8" onclick="selectTeam(8)">김천상무</button>
+            <button data-teamid="9" onclick="selectTeam(9)">포항FC</button>
+            <button data-teamid="10" onclick="selectTeam(10)">대구FC</button>
+            <button data-teamid="11" onclick="selectTeam(11)">울산FC</button>
+            <button data-teamid="12" onclick="selectTeam(12)">제주FC</button>
+          </section>
+
+        <section id="playerList" class="playerList">
+            <!-- 선수 정보가 여기에 JS로 동적으로 추가됩니다 -->
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer_left">
+                <p>경기대학교 웹프로그래밍(DD725_1454) 팀프로젝트</p> <!-- 왼쪽 푸터 내용 -->
+            </div>
+            <div class="footer_center">
+                <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" alt="GitHub"
+                    width="30"> <!-- GitHub 아이콘 -->
+                <span>Github</span> <!-- GitHub 텍스트 -->
+            </div>
+            <div class="footer_right">
+                <p>임유진 sktm13@kyonggi.ac.kr</p> <!-- 오른쪽 푸터 내용 (이메일) -->
+                <p>신민철 abcd@kyonggi.ac.kr</p>
+                <p>류동헌 efgh@kyonggi.ac.kr</p>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
