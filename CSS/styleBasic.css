@@ -53,14 +53,6 @@ nav > a:hover::after{
     width: 50%;
 }
 
-nav > .login > a {
-    background-color: black;
-    color: white;
-    margin: 0 10px;
-    padding: 8px 16px;
-    border-radius: 4px;
-}
-
 
 footer {
     border-top:1px solid #d2d2d7;

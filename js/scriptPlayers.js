@@ -146,6 +146,12 @@ function selectTeam(teamId) {
           <div style="display: flex; gap: 5px; margin-top: 10px;">
             <input
               type="text"
+              placeholder="닉네임 입력..."
+              style="padding: 5px; width: 120px;"
+              id="nicknameInput-${teamId}-${index}"
+            />
+            <input
+              type="text"
               placeholder="댓글 작성..."
               onkeydown="addComment(event, ${teamId}, ${index})"
               style="flex: 1; padding: 5px;"
@@ -172,44 +178,40 @@ function formatDateTime() {
 }
 
 function submitComment(teamId, playerIndex) {
-  const input = document.getElementById(`commentInput-${teamId}-${playerIndex}`);
-  const commentText = input.value.trim();
-  if (commentText === "") return;
+  const nicknameInput = document.getElementById(`nicknameInput-${teamId}-${playerIndex}`);
+  const commentInput = document.getElementById(`commentInput-${teamId}-${playerIndex}`);
+  const nickname = nicknameInput.value.trim();
+  const commentText = commentInput.value.trim();
+  
+  if (nickname === "" || commentText === "") {
+    alert("닉네임과 댓글을 모두 입력해주세요.");
+    return;
+  }
 
   const timestamp = formatDateTime();
   const player = playersData[teamId][playerIndex];
-  player.comments.push(commentText);
+  player.comments.push({ nickname, text: commentText, timestamp });
 
   const box = document.getElementById(`commentBox-${teamId}-${playerIndex}`);
   const commentDiv = document.createElement("div");
   commentDiv.className = "comment";
   commentDiv.innerHTML = `
-    <div style="display: flex; justify-content: space-between;">
-      <span>${commentText}</span>
-      <span style="font-size: 0.8em; color: gray;">작성일시: ${timestamp}</span>
+    <div style="margin-bottom: 5px;">
+      <span style="font-weight: bold; color: #333;">${nickname}</span>
+      <span style="font-size: 0.8em; color: gray; margin-left: 10px;">작성일시: ${timestamp}</span>
+    </div>
+    <div style="padding-left: 10px; color: #555;">
+      ${commentText}
     </div>
   `;
   box.prepend(commentDiv); // 최신순
-  input.value = "";
+  nicknameInput.value = "";
+  commentInput.value = "";
 }
-function addComment(event, teamId, playerIndex) {
-  if (event.key === "Enter" && event.target.value.trim() !== "") {
-    const commentText = event.target.value.trim();
-    const timestamp = formatDateTime();
-    const player = playersData[teamId][playerIndex];
-    player.comments.push(commentText);
 
-    const box = document.getElementById(`commentBox-${teamId}-${playerIndex}`);
-    const commentDiv = document.createElement("div");
-    commentDiv.className = "comment";
-    commentDiv.innerHTML = `
-      <div style="display: flex; justify-content: space-between;">
-        <span>${commentText}</span>
-        <span style="font-size: 0.8em; color: gray;">작성일시: ${timestamp}</span>
-      </div>
-    `;
-    box.prepend(commentDiv); // 최신순
-    event.target.value = "";
+function addComment(event, teamId, playerIndex) {
+  if (event.key === "Enter") {
+    submitComment(teamId, playerIndex);
   }
 }
 
